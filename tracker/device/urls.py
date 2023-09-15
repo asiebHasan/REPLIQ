@@ -6,4 +6,5 @@ urlpatterns = [
      path('list/', views.device_list, name='device-list'),
      path('log/add/', views.add_log, name='add-log'),
      path('log/list/', views.log_list, name='log-list'),
+     path('log/return/', views.return_device, name='log-return'),
 ]
