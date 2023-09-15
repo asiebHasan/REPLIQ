@@ -8,9 +8,9 @@ class CompanySerializer(serializers.ModelSerializer):
         fields = ('id', 'company_name', 'email', 'password')
         extra_kwargs = {'password': {'write_only': True}}
 
-    def create(self, validated_date):
+    def create(self, validated_data):
         company = Company(
-            company_name=validated_date['company_name'], email=validated_date['email'])
-        company.set_password(validated_date['password'])
+            company_name=validated_data['company_name'], email=validated_date['email'])
+        company.set_password(validated_data['password'])
         company.save()
         return company
